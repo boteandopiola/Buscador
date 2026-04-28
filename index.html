@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador de Artículos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #b1b2b1;
+      padding: 20px;
+    }
+	
+	h1 {
+      text-align: center;
+	  color: #1e5858;
+    }
+
+    #buscador {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .tarjeta {
+      background: white;
+      border-radius: 10px;
+      width: 200px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .tarjeta img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .tarjeta img:hover {
+      transform: scale(1.05);
+    }
+
+    .precio {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Buscador LiteShop</h1>
+
+  <input type="text" id="buscador" placeholder="Buscar por descripción...">
+
+  <div class="contenedor" id="contenedor"></div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <img id="imagenModal">
+  </div>
+
+  <script>
+    const articulos = [
+      {
+        codigo: "A001",
+        descripcion: "Encendedor Led",
+        precio: 5000,
+        foto: "https://instagram.feze13-1.fna.fbcdn.net/v/t51.82787-15/583121862_17890142001379779_8663235353533637537_n.webp?_nc_cat=107&ig_cache_key=Mzc2ODUyMzI4MjU5ODIwMTUwMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjgxMHgxMDgwLnNkci5DMyJ9&_nc_ohc=qjX0DXXuhhgQ7kNvwFMji1L&_nc_oc=AdranE0koF0PghSuqoxTCepjtCyrJa-hsmF9aPLhueD_gfxmUmZH26ZvinRclxrH1Xodzir1CQbqEfiL9OhSHhYL&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.feze13-1.fna&_nc_gid=xnzqzQHLhvdZwuyb34VHbg&_nc_ss=7a22e&oh=00_Af244F18w0_R8B63AmkROhoweVRzLtNUokWepnGoUzvZsw&oe=69F49431"
+      },
+      {
+        codigo: "A002",
+        descripcion: "Soporte Imantado Iphone",
+        precio: 8000,
+        foto: "https://instagram.feze13-1.fna.fbcdn.net/v/t51.82787-15/582856855_17890141812379779_3788539602347177303_n.webp?_nc_cat=106&ig_cache_key=Mzc2ODUyMTU2NDcyMDM3NTczMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjgxMHgxMDgwLnNkci5DMyJ9&_nc_ohc=OlVwyAaQ6PYQ7kNvwEDthvg&_nc_oc=AdrK1rbX_hkCP2obJZ54dxk7jJOdnTaODvR2UFt5R3I7o26Q4OTJxH6glU9HEp4X60v35eXK39RTST6KPUZhWC2u&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.feze13-1.fna&_nc_gid=xnzqzQHLhvdZwuyb34VHbg&_nc_ss=7a22e&oh=00_Af2-2MQaH301oSjCF1IFxo0S1vigUxftAiKOtMYu5ze_lg&oe=69F4AA27"
+      },
+      {
+        codigo: "A003",
+        descripcion: "Tensiometro Digital",
+        precio: 19000,
+        foto: "https://instagram.feze13-1.fna.fbcdn.net/v/t51.82787-15/583318685_17889950553379779_8497664172100280544_n.webp?_nc_cat=104&ig_cache_key=Mzc2NzE2NzE1NTY1ODc0MTQ0OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=vcKgp9q430UQ7kNvwE3bABu&_nc_oc=AdoLBtcLdObuhxQrQMDX_0gO2c4qCxUC0jo66Ru808GA_Qnm6KiEiqwDVNMHoxLXhFyMu5HZ804UgX7Cu5HnY5cD&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.feze13-1.fna&_nc_gid=xnzqzQHLhvdZwuyb34VHbg&_nc_ss=7a22e&oh=00_Af1twa9Pi2pgY7y3x5qwdokmH-NBczsMjk0YYLxyZsruMA&oe=69F4C067"
+      },
+      {
+        codigo: "A004",
+        descripcion: "Drone E88 Pro",
+        precio: 40000,
+        foto: "https://instagram.feze13-1.fna.fbcdn.net/v/t51.82787-15/583535963_17890110930379779_2738450296444358721_n.webp?_nc_cat=104&ig_cache_key=Mzc2ODI2MTczNzI3NjI1MDc3OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjg2M3gxMDgwLnNkci5DMyJ9&_nc_ohc=KC93l_5Z-zgQ7kNvwFhSQlD&_nc_oc=AdoTnjv4kijee0YecrXTgYexl0L_ouxbEWSlT97HfA9yW9G0ORQiq-SplNehbIoUrv-KoI0NSnWeAepaXVtZIAML&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.feze13-1.fna&_nc_gid=xnzqzQHLhvdZwuyb34VHbg&_nc_ss=7a22e&oh=00_Af0n8uDQlBzz_3KaZj9oj91t5ZckM7A5LZFxx6LFSq0m-w&oe=69F4C1F4"
+      }
+    ];
+
+    const contenedor = document.getElementById("contenedor");
+    const buscador = document.getElementById("buscador");
+    const modal = document.getElementById("modal");
+    const imagenModal = document.getElementById("imagenModal");
+
+    function mostrarArticulos(lista) {
+      contenedor.innerHTML = "";
+
+      lista.forEach(art => {
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("tarjeta");
+
+        tarjeta.innerHTML = `
+          <img src="${art.foto}" alt="imagen">
+          <h3>${art.descripcion}</h3>
+          <p>Código: ${art.codigo}</p>
+          <p class="precio">$${art.precio}</p>
+        `;
+
+        // Evento click en imagen
+        const img = tarjeta.querySelector("img");
+        img.addEventListener("click", () => {
+          imagenModal.src = art.foto;
+          modal.classList.add("active");
+        });
+
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+    // Cerrar modal al hacer click fuera
+    modal.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+
+    buscador.addEventListener("input", () => {
+      const texto = buscador.value.toLowerCase();
+
+      const filtrados = articulos.filter(art =>
+        art.descripcion.toLowerCase().includes(texto)
+      );
+
+      mostrarArticulos(filtrados);
+    });
+
+    mostrarArticulos(articulos);
+  </script>
+
+</body>
+</html>
