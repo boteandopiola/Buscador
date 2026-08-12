@@ -88,76 +88,52 @@
     <img id="imagenModal">
   </div>
 
-  <script>
-    const URL_API = "https://script.google.com/macros/s/AKfycbxNHxr0hLsYZKOM0e3R2VTee39kWEYya7aycmed7smbXqcQfEpAnOU6E8vU8dz7oXOd/exec";
+<script>
+  const contenedor = document.getElementById("contenedor");
+  const buscador = document.getElementById("buscador");
+  const modal = document.getElementById("modal");
+  const imagenModal = document.getElementById("imagenModal");
+  
+  let articulos = []; // Variable global
 
-    let articulos = [];
+  // Cargar datos desde el JSON externo
+  fetch('productos.json')
+    .then(response => response.json())
+    .then(data => {
+      articulos = data;
+      mostrarArticulos(articulos);
+    })
+    .catch(error => console.error('Error cargando productos:', error));
 
-    const contenedor = document.getElementById("contenedor");
-    const buscador = document.getElementById("buscador");
-    const modal = document.getElementById("modal");
-    const imagenModal = document.getElementById("imagenModal");
-
-    // Función para obtener los datos desde Google Sheets
-    async function cargarArticulos() {
-      try {
-        const respuesta = await fetch(URL_API);
-        articulos = await respuesta.json();
-        mostrarArticulos(articulos);
-      } catch (error) {
-        contenedor.innerHTML = "<p>Error al cargar los artículos.</p>";
-        console.error(error);
-      }
-    }
-
-    function mostrarArticulos(lista) {
-      contenedor.innerHTML = "";
-
-      if (lista.length === 0) {
-        contenedor.innerHTML = "<p>No se encontraron artículos.</p>";
-        return;
-      }
-
-      lista.forEach(art => {
-        const tarjeta = document.createElement("div");
-        tarjeta.classList.add("tarjeta");
-
-        tarjeta.innerHTML = `
-          <img src="${art.foto}" alt="imagen">
-          <h3>${art.descripcion}</h3>
-          <p>Código: ${art.codigo}</p>
-          <p class="precio">$${art.precio}</p>
-        `;
-
-        // Evento click en imagen
-        const img = tarjeta.querySelector("img");
-        img.addEventListener("click", () => {
-          imagenModal.src = art.foto;
-          modal.classList.add("active");
-        });
-
-        contenedor.appendChild(tarjeta);
+  function mostrarArticulos(lista) {
+    contenedor.innerHTML = "";
+    lista.forEach(art => {
+      const tarjeta = document.createElement("div");
+      tarjeta.classList.add("tarjeta");
+      tarjeta.innerHTML = `
+        <img src="${art.foto}" alt="imagen">
+        <h3>${art.descripcion}</h3>
+        <p>Código: ${art.codigo}</p>
+        <p class="precio">$${art.precio}</p>
+      `;
+      tarjeta.querySelector("img").addEventListener("click", () => {
+        imagenModal.src = art.foto;
+        modal.classList.add("active");
       });
-    }
-
-    // Cerrar modal al hacer click fuera
-    modal.addEventListener("click", () => {
-      modal.classList.remove("active");
+      contenedor.appendChild(tarjeta);
     });
+  }
 
-    buscador.addEventListener("input", () => {
-      const texto = buscador.value.toLowerCase();
+  modal.addEventListener("click", () => modal.classList.remove("active"));
 
-      const filtrados = articulos.filter(art =>
-        String(art.descripcion).toLowerCase().includes(texto)
-      );
-
-      mostrarArticulos(filtrados);
-    });
-
-    // Iniciar carga de datos
-    cargarArticulos();
-  </script>
+  buscador.addEventListener("input", () => {
+    const texto = buscador.value.toLowerCase();
+    const filtrados = articulos.filter(art =>
+      art.descripcion.toLowerCase().includes(texto)
+    );
+    mostrarArticulos(filtrados);
+  });
+</script>
 
 </body>
 </html>
