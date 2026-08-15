@@ -1,44 +1,62 @@
 [
   {
-    "codigo": "A001",
+    "codigo": 1,
     "descripcion": "Soporte",
     "precio": 8000,
     "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/582856855_17890141812379779_3788539602347177303_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=JZdUKPUDWNQQ7kNvwGj3ZhI&_nc_oc=Adp8hEXUFzX1ek-SjNSIqcwspQMvT_SJyu2BxGGKR_rLmnBxZlhLDlZ2v5cNbYJizOo_kz-pelJ-GbSs9VyyZh14&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQFoQNqzQf162Vx6LOFsIuSkEJIThQ5kP0-gIrI-8Gp-eg&oe=6A82D3E7"
   },
   {
-    "codigo": "A002",
+    "codigo": 2,
     "descripcion": "Luz",
-    "precio": 8000,
+    "precio": 9000,
     "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/583086296_17889951240379779_7515210704786536348_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=2JavyriaE38Q7kNvwGUeS3Y&_nc_oc=AdpCVQjsSgr3CBSUHKRpJQg_nLJ9AZbIr2FYL84HPOA6H3QNUWb-kPkYRKpZaY7tDKuhd3r8l6JsXvikmNiEw3Aq&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQFIRm3-vgc1N_5E_uwIV3TNDVB4tj4ekF5gUHv9sVQ7yQ&oe=6A82C0AB"
   },
   {
-    "codigo": "A003",
+    "codigo": 3,
     "descripcion": "Encendedor",
-    "precio": 8000,
+    "precio": 5000,
     "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/583121862_17890142001379779_8663235353533637537_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=O2J_0PEuAocQ7kNvwFEty-m&_nc_oc=AdrhlxIa9Z3VzA3EmDqvTVGhZlcL1RhWQr-_r9cGhAR3UhFHtttWFuQY71Plqx8rb_hVECnRLWlw_7MzF3yzpQlt&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQEr51CJLsbwvewEnLYdSctVPi92Yq8TTFFQ7wqKBietog&oe=6A82BDF1"
   },
   {
-    "codigo": "A004",
+    "codigo": 4,
     "descripcion": "Tensiometro",
-    "precio": 8000,
+    "precio": 19000,
     "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/583318685_17889950553379779_8497664172100280544_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ZbZK_TbEN78Q7kNvwFZx3oa&_nc_oc=AdoU2qIFCR-p0k3jeB7YG_QFyd7_OPYQcxFzZnW3rRJsLE7uTmvcNfdKI4wOINXv2MW1v7ytiLyWBTvUin80hA4b&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQEJxbzQGM7wq2GMQM0Rcb8KaJbXFR-VTgtF18CYIL8acA&oe=6A82B1E7"
   },
   {
-    "codigo": "A004",
+    "codigo": 5,
     "descripcion": "Drone",
-    "precio": 8000,
+    "precio": 40000,
     "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/583535963_17890110930379779_2738450296444358721_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=vjkuRP1-itsQ7kNvwF742b0&_nc_oc=AdogwoDCQipJqlLHYJuKxELCz_-rc8ToHF9T7XG8JPi1J_pnGZAkzH5IlmCY0om4h7wOjnHbwmVyLR28omGkPM09&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQGrE6QW9rFosl3ERTTYbTLrMZuVZRPZ1xuAYSRdY5uWhQ&oe=6A82B374"
   },
   {
-    "codigo": "A005",
+    "codigo": 6,
     "descripcion": "Masajeador",
-    "precio": 8000,
+    "precio": 18500,
     "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/583875103_17890141506379779_896737450479930414_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ZTUnj58q3E0Q7kNvwGCqPTI&_nc_oc=Adpr_eNxmliePfGepLST5SaTpNi9sFX8i9kmlRNPM1hA35J6vmNeiRcSsMeqw3GFzlkk__ISf5pHIzHteJ7GElML&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQF5WaS1NvRwQh6flD1z-EZeHlL5Pt-v7eF4BmlfQ8HwvQ&oe=6A82AA31"
   },
   {
-    "codigo": "A006",
+    "codigo": 7,
     "descripcion": "Depilador",
-    "precio": 8000,
+    "precio": 3500,
     "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/584008018_17890141869379779_3367110787367040274_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=QSBiCAhtAcYQ7kNvwGdJwDl&_nc_oc=Adqw5Zuu6gmmP_tV5dQ4K-btjm_MsF1Gg_aYBbjilz0PK5NwKX8RmdjAaW2LWlDS5Jl8lK4kcpGeFwplbMLiFZEz&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQHvNv1YYuGrJYWKsr2Jfoszx1FGveyc8MtvsbLc5sRQfA&oe=6A82BAB2"
+  },
+  {
+    "codigo": 8,
+    "descripcion": "Tender",
+    "precio": 25000,
+    "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/584320638_17889950328379779_32752607899602816_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ht7ge715hrwQ7kNvwHxOuVv&_nc_oc=AdrPzCq810Yg6Mkhb9BoThUIMxeM2Yi__0fjPjJ_BFL3DT84iGvpYa9xIIJPspGK1Ukx0ukeOiXmy0mEZgGeVA_P&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQHh5DGSYZGTNO-t2RRpBmRpKusMdvGY634jrd8fW7hyiw&oe=6A82C6B9"
+  },
+  {
+    "codigo": 9,
+    "descripcion": "Camaras",
+    "precio": 120000,
+    "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/745557071_17924674293379779_135164554063338385_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=0yaAV-eTG3kQ7kNvwHO6fra&_nc_oc=AdoRhQ4zs2lUm9I5WynU7XMr72NqLIrgstBXFA1cXCDT5fPly1yUOhMlUwFAcIgvq0pnw6YJ9tTv5fCKch7-qEDQ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQGoZTVFd6VGng238bD5-VcMnAVuFX07Zq0BEAIL-s64pw&oe=6A82ACC0"
+  },
+  {
+    "codigo": 10,
+    "descripcion": "Camello",
+    "precio": 15000,
+    "foto": "https://scontent.cdninstagram.com/v/t51.82787-15/583121862_17890142001379779_8663235353533637537_n.webp?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=O2J_0PEuAocQ7kNvwFEty-m&_nc_oc=AdrhlxIa9Z3VzA3EmDqvTVGhZlcL1RhWQr-_r9cGhAR3UhFHtttWFuQY71Plqx8rb_hVECnRLWlw_7MzF3yzpQlt&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Iyd4qIdWtIewoDILXRLp-Q&_nc_ss=7b689&oh=00_AQEr51CJLsbwvewEnLYdSctVPi92Yq8TTFFQ7wqKBietog&oe=6A82BDF1"
   }
 ]
